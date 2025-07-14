@@ -1,0 +1,14 @@
+# 비밀 파일 무조건 제외
+env
+.env
+*.env
+aroma-tts-credentials.json
+*.credentials.json
+
+# node_modules 무시 (보통 필요)
+node_modules/
+
+# 기타 백업 파일 무시
+*.bak
+*.log
+.DS_Store
