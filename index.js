@@ -1,4 +1,4 @@
-require('dotenv').config(); 
+require('dotenv').config();
 const textToSpeech = require('@google-cloud/text-to-speech');
 const express = require('express');
 const cors = require('cors');
@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ 환경변수에서 자격증명 가져오기
-const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+// ✅ JSON 자격증명을 파일에서 직접 불러옵니다.
+const credentials = require('./aroma-tts-credentials.json');
 const client = new textToSpeech.TextToSpeechClient({ credentials });
 
 // ✅ TTS 엔드포인트
